@@ -4,6 +4,7 @@ import Login from "./screens/Login";
 import HomeScreen from "./screens/HomeScreen";
 import WorkoutScreen from "./screens/Product";
 import SplashScreen from "./screens/SplashScreen";
+import ARPage from "./screens/ARPage";
 
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -14,6 +15,7 @@ const StackNavigator = () => {
       <Stack.Screen name="Login" component={Login} options={{headerShown:false}}/>
       <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}}/>
       <Stack.Screen name="Product" component={WorkoutScreen} options={{headerShown:false}}/>
+      <Stack.Screen name="ARPage" component={ARPage} />
     </Stack.Navigator>
   );
 };

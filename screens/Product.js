@@ -10,9 +10,8 @@ import {
 import React ,{useContext} from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
-import { FitnessItems } from "../Context";
 import { AntDesign } from '@expo/vector-icons';
-const WorkOutScreen = () => {
+const Product = () => {
   const route = useRoute();
 //   console.log(route.params);
   const navigation = useNavigation();
@@ -35,6 +34,15 @@ const WorkOutScreen = () => {
           size={28}
           color="white"
         />
+
+        <Ionicons
+          onPress={() => navigation.navigate('ARPage')} // Replace 'ARPage' with your AR page's route name
+          style={{ position: "absolute", top: 20, right: 20 }}
+          name="camera-outline" // This is an example icon name, adjust as needed
+          size={28}
+          color="white"
+        />
+
 
         {route.params.excersises.map((item, index) => (
           <Pressable
@@ -66,6 +74,6 @@ const WorkOutScreen = () => {
   );
 };
 
-export default WorkOutScreen;
+export default Product;
 
 const styles = StyleSheet.create({});

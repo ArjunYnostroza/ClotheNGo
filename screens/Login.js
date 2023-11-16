@@ -1,45 +1,62 @@
-import React from 'react';
-import { StyleSheet, View, TextInput, TouchableOpacity, Text, Image } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, TextInput, TouchableOpacity, Text, Image, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 export default function App() {
-    const navigation = useNavigation();
-  
-    const handleLogin = () => {
-      // For now, directly navigating to HomeScreen without authentication check
-      navigation.navigate('Home');
-    };
+  const navigation = useNavigation();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-    return (
-        <View style={styles.container}>
-          {/* Logo Placeholder */}
-          <Image 
-            source={require('../logo.png')} 
-            style={styles.logo}
-            resizeMode="contain"
-          />
+  const Accounts = [
+      { username: "User1", password: "Password1" },
+      { username: "User2", password: "Password2" },
+      // Add more accounts as needed
+  ];
 
-          <TextInput
-            style={styles.input}
-            placeholder="Enter your username"
-            placeholderTextColor="#888"
-          /> 
+  const handleLogin = () => {
+      const account = Accounts.find(acc => acc.username === username && acc.password === password);
 
-          <TextInput
-            style={styles.input}
-            placeholder="Enter your password"
-            placeholderTextColor="#888"
-            secureTextEntry={true}
-          />
+      if (account) {
+          navigation.navigate('Home');
+      } else {
+          Alert.alert("Login Failed", "Invalid username or password");
+      }
+  };
 
-          <TouchableOpacity 
-              style={styles.buttonStyle} 
-              onPress={handleLogin}  // use the handleLogin function here
-          >
-              <Text style={styles.buttonText}>Login</Text>
-          </TouchableOpacity>
-        </View>
-    );
+  return (
+      <View style={styles.container}>
+        {/* Logo Placeholder */}
+        <Image 
+          source={require('../logo.png')} 
+          style={styles.logo}
+          resizeMode="contain"
+        />
+
+        <TextInput
+          style={styles.input}
+          placeholder="Enter your username"
+          placeholderTextColor="#888"
+          onChangeText={setUsername}
+          value={username}
+        /> 
+
+        <TextInput
+          style={styles.input}
+          placeholder="Enter your password"
+          placeholderTextColor="#888"
+          secureTextEntry={true}
+          onChangeText={setPassword}
+          value={password}
+        />
+
+        <TouchableOpacity 
+            style={styles.buttonStyle} 
+            onPress={handleLogin}
+        >
+            <Text style={styles.buttonText}>Login</Text>
+        </TouchableOpacity>
+      </View>
+  );
 }
 
 const styles = StyleSheet.create({

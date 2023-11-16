@@ -1,0 +1,14 @@
+git status
+
+git add .
+or 
+git add path/to/file
+
+git commit -m "comment"
+
+git push (MAIN BRANCH)
+or 
+git push origin Frontend
+
+
+git pull to pull changes

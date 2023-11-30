@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{A49C2983-B0A7-F3E0-2BB3-60755B06098B}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Library/PackageCache/com.unity.xr.arfoundation@5.0.7/Runtime/ARFoundation/ARHumanBodyManager.cs">
+    <Files>
+      <File FileName="Library/PackageCache/com.unity.xr.arfoundation@5.0.7/Runtime/ARFoundation/ARHumanBodyManager.cs" Line="240" Column="2" />
+      <File FileName="Library/PackageCache/com.unity.xr.arfoundation@5.0.7/Runtime/ARFoundation/ARHumanBody.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Body" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="ExampleAssets" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d987ac1e-ec79-40a8-8dcd-6bf4f72c2539" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

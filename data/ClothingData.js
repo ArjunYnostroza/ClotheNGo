@@ -5,7 +5,7 @@ export default [
       "https://peakstudentmediadotcom.files.wordpress.com/2017/12/adidas.jpg?w=860&h=280&crop=1",
     name: "Adidas",
     description: "7x4 CHALLENGE",
-    excersises: [
+    clothing: [
       {
         id: "10",
         image:
@@ -52,7 +52,7 @@ export default [
       "https://www.shoepalace.com/cdn/shop/articles/unnamed_33117700-72f9-4081-98fe-13cb4327f6a3_1200x1200.jpg?v=1673629203",
     name: "Nike",
     description: "7x4 CHALLENGE",
-    excersises: [
+    clothing: [
       {
         id: "10",
         image:
@@ -96,9 +96,9 @@ export default [
     id: "2",
     image:
       "https://9to5toys.com/wp-content/uploads/sites/5/2020/02/REI-Winter-Clearance-Event.jpg",
-    name: "The North Face",
+    name: "North Face",
     description: "7x4 CHALLENGE",
-    excersises: [
+    clothing: [
       {
         id: "10",
         image:
@@ -143,7 +143,7 @@ export default [
     image: "https://wallpapers.com/images/hd/supreme-mac-eqygffrb0oykiabp.jpg",  
     name: "Supreme",
     description: "7x4 CHALLENGE",
-    excersises: [
+    clothing: [
       {
         id: "10",
         image:
@@ -190,7 +190,7 @@ export default [
       "https://wallpapercave.com/wp/wp4431373.jpg",
     name: "Golf Wang",
     description: "7x4 CHALLENGE",
-    excersises: [
+    clothing: [
       {
         id: "10",
         image:

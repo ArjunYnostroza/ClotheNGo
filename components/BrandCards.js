@@ -1,31 +1,29 @@
-import { StyleSheet, Text, View, Pressable, Image, Button, ScrollView } from "react-native";
 import React from "react";
+import { StyleSheet, Text, View, Pressable, Image } from "react-native";
 import Clothing from "../data/ClothingData";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-const Cards = () => {
-  const ClothingData = Clothing;
+const BrandCards = ({ brands }) => {
   const navigation = useNavigation();
+
+  // Filter ClothingData based on the brands passed as props
+  const filteredClothingData = Clothing.filter(item => brands.includes(item.name));
+
   return (
     <View>
-      {ClothingData.map((item, key) => (
+      {filteredClothingData.map((item, key) => (
         <Pressable
-        onPress={() => navigation.navigate("Product",{
-
-          //Images for Shirts, Sweaters etc
-          image:item.image,
-
-          // Below displays Shirts, Sweater etc in txt
-          excersises:item.excersises,
-          
-          id:item.id,
-        })}
+          onPress={() => navigation.navigate("Product", {
+            image: item.image,
+            exercises: item.exercises,
+            id: item.id,
+          })}
           style={{ alignItems: "center", justifyContent: "center", margin: 10 }}
           key={key}
         >
           <Image
-            style={{ width: "95%", height: 140, borderRadius: 7}}
+            style={{ width: "95%", height: 140, borderRadius: 7 }}
             source={{ uri: item.image }}
           />
           <Text
@@ -41,20 +39,17 @@ const Cards = () => {
             {item.name}
           </Text>
           <MaterialCommunityIcons
-            style={{ position: "absolute", color: "white", bottom: 15,left:20 }}
+            style={{ position: "absolute", color: "white", bottom: 15, left: 20 }}
             name="lightning-bolt"
             size={24}
             color="black"
           />
-
-
-
         </Pressable>
       ))}
     </View>
   );
 };
 
-export default Cards;
+export default BrandCards;
 
 const styles = StyleSheet.create({});

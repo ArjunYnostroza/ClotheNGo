@@ -1,27 +1,33 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, TextInput, TouchableOpacity, Text, Image, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useUser } from '../data/UserContext'; // Adjust the path as necessary
 
 export default function App() {
   const navigation = useNavigation();
+  const { setUsername: setGlobalUsername } = useUser(); // Use the setUsername from UserContext
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const Accounts = [
-      { username: "User1", password: "Password1" },
-      { username: "User2", password: "Password2" },
+      { username: "Joseeeeee", password: "1" },
+      { username: "Steven", password: "1" },
+      { username: "Bryan", password: "1" },
+      { username: "Arjun", password: "1" },
+      { username: "Admin", password: "1" },
+
       // Add more accounts as needed
   ];
 
-  const handleLogin = () => {
-      const account = Accounts.find(acc => acc.username === username && acc.password === password);
+ const handleLogin = () => {
+  const account = Accounts.find(acc => acc.username === username && acc.password === password);
 
-      if (account) {
-          navigation.navigate('Home');
-      } else {
-          Alert.alert("Login Failed", "Invalid username or password");
-      }
-  };
+  if (account) {
+      navigation.navigate('Home', { username: username });
+  } else {
+      Alert.alert("Login Failed", "Invalid username or password");
+  }
+};
 
   return (
       <View style={styles.container}>

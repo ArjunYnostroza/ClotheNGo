@@ -15,6 +15,7 @@ const Product = () => {
   const route = useRoute();
 //   console.log(route.params);
   const navigation = useNavigation();
+  const clothing = Array.isArray(route.params?.clothing) ? route.params.clothing : [];
   
   return (
     <>
@@ -44,8 +45,8 @@ const Product = () => {
         />
 
 
-        {route.params.excersises.map((item, index) => (
-          <Pressable
+{clothing.map((item, index) => (          
+  <Pressable
             style={{ margin: 10, flexDirection: "row", alignItems: "center" }}
             key={index}
           >
